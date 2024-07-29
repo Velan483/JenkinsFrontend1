@@ -1,8 +1,13 @@
 import { render, screen } from '@testing-library/react';
-import App from './App';
+import Add from './Add';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+jest.mock('axios');
+jest.mock('react-router-dom');
+
+test('renders Add Property data', () => {
+  render(<Add />);
+  const linkElement = screen.getByText('ADD PROPERTY DATA');
   expect(linkElement).toBeInTheDocument();
 });
+
+
